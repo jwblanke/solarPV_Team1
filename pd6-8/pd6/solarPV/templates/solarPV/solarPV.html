@@ -1,0 +1,119 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>solarPV Homepage</title>
+        <link href="{% static 'solarPV/Style.css' %}" type="text/css" rel="stylesheet"/>
+        <link rel="stylesheet" media="only screen and (min-width: 961px)" href="Style.css" />
+        <meta name="viewport" content="initial-scale=1">
+    </head>
+
+    <body>
+        
+        <div class="header">
+            <img alt="logo" src="solarPV/logo_transparent.png" height="150" width="150">
+            <h1><i>solarPV</i></h1>
+        </div> 
+
+        <br>
+        <div class="main_nav">
+            
+            <a href="{% url 'solarPV' %}">Home</a>
+            
+            <a href="">Racks and Trackers</a>
+            
+            <div class="product-dropdown">
+                <button class="product-drop-btn">PV Module
+                    <i class="product-irrelevant"></i>
+                </button>
+                <div class="product-dropdown-content">
+                    <a href="">Testing and Certification</a>
+                    <a href="">PV Rating</a>
+                </div>
+            </div> 
+            
+            <div class="product-dropdown">
+                <button class="product-drop-btn">PV Systems
+                    <i class="product-irrelevant"></i>
+                </button>
+                <div class="product-dropdown-content">
+                    <a href="">Monitoring and Inspection</a>
+                    <a href="">Performance Analysis</a>
+                    <a href="">Compare System</a>
+                    <a href="">Energy Prediction</a>
+                </div>
+            </div> 
+            
+            <div class="product-dropdown">
+                <button class="product-drop-btn">Data Analysis
+                    <i class="product-irrelevant"></i>
+                </button>
+                <div class="product-dropdown-content">
+                    <a href="">Module Lifetime Prevention</a>
+                    <a href="">Emergy Prediction</a>
+                </div>
+            </div> 
+            
+            <a href="">Cybersecurity</a>
+            
+            <div class="news-dropdown">
+                <button class="news-drop-btn">News and Events
+                    <i class="news-irrelevant"></i>
+                </button>
+                <div class="news-dropdown-content">
+                    <a href="">Recent News</a>
+                    <a href="">Events</a>
+                    <a href="">About Us</a>
+                </div>
+            </div>
+            
+            <a href="{% url 'registrationForm' %}"> Register </a>
+            
+        </div>
+        
+        <br>
+        
+        <fieldset>
+            
+            <br>
+            <br>
+            
+            <div id="banner">
+                <fieldset style= "width: 400px; height: auto; text-align: center;" id="newsbanner">
+                    <h2 id="news">News and Events</h2>
+                    <i><p>PhotoVoltaic Technical Conference to take place in Marseille, France from 26 to 28 April 2017</p>
+                    <p>Trump is next US president</p>
+                    <p>Syrian forces recapture Aleppo</p>
+                    <p>Senate votes on SCOTUS nominee</p>
+                    </i>
+                </fieldset>
+            </div>
+            
+            
+            <br>
+
+                <div id="homepics">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/B5kFgJLBpec"></iframe>
+                </div>
+            
+            <br>
+            <br>
+            
+        </fieldset>
+        
+        <br>
+
+        <footer> 
+            1 Galaxy Way Sunset, Nevada 0001, Phone: 1-800-Sun-Power, Email: <a href="mailto:solarPV@gmail.com">solarPV@gmail.com</a> <br> <br>
+            
+            <a href="Map.html">Site Map</a> | <a href="Home.html">Terms and Conditions</a> | <a href="Home.html">Privacy Policy</a> | <a href="Home.html">About Us</a>
+            
+        </footer>
+
+    </body>
+
+</html> 
