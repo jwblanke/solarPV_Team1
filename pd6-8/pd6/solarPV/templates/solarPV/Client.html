@@ -4,16 +4,17 @@
 
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <title>solarPV Homepage</title>
-        <link href="{% static 'solarPV/Style.css' %}" type="text/css" rel="stylesheet"/>
-        <link rel="stylesheet" media="only screen and (min-width: 961px)" href="{% static 'solarPV/Style.css' %}" />
-        <meta name="viewport" content="initial-scale=1">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <title>Client Registration Form</title>
+    <link href="{% static 'solarPV/Style.css' %}" type="text/css" rel="stylesheet"/>
+    <link rel="stylesheet" media="only screen and (min-width: 961px)" href="{% static 'solarPV/Style.css' %}" />
+    <meta name="viewport" content="initial-scale=1">
+    <script src="PD1Java.js"></script>
+</head>
 
-    <body>
-        
+<body>
+
         <div class="header">
             <img alt="logo" src="{% static 'solarPV/logo_transparent.png'%}" height="150" width="150">
             <h1><i>solarPV</i></h1>
@@ -76,46 +77,52 @@
 			<a href="{% url 'Login' %}">Log In</a>
             
         </div>
+    
+    <br>
+    
+    <fieldset id="formfield">
         
-        <br>
-        
-        <fieldset>
+        <h2>Client Registration Form</h2>
+
+        <form autocomplete="off" id="clientform" onsubmit="return verifyAll();" method="">
             
-            <br>
-            <br>
-            
-            <div id="banner">
-                <fieldset style= "width: 400px; height: auto; text-align: center;" id="newsbanner">
-                    <h2 id="news">News and Events</h2>
-                    <i><p>PhotoVoltaic Technical Conference to take place in Marseille, France from 26 to 28 April 2017</p>
-                    <p>Trump is next US president</p>
-                    <p>Syrian forces recapture Aleppo</p>
-                    <p>Senate votes on SCOTUS nominee</p>
-                    </i>
-                </fieldset>
+            <div class='clientid'>
+                <label for='clientid'>Client ID: </label>
+                <input type='text' name='clientid' id='clientid' size='30' maxlength='8' onblur='checkClientID(this.id)' required/> 
             </div>
+            <br>
             
-            
+             <div class='clientName'>
+                <label for='clientName'>Client Name: </label>
+                <input type='text' name='clientName' id='clientName' size='30' maxlength='8' onblur='checkClientName(this.id)' required/> 
+            </div>
             <br>
 
-                <div id="homepics">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/B5kFgJLBpec"></iframe>
-                </div>
-            
+            <div class='clientType'>
+                <label for='clientType'>Client Type: </label>
+                <input type='text' name='clientType' id='clientType' size='30' maxlength='30' onblur='checkClientType(this.id)'/> 
+            </div>
             <br>
-            <br>
             
-        </fieldset>
+            <div id='submit' > 
+                <input type='submit' value='Submit' onclick="return confirmation()"> 
+            </div>  
+
+            <br>
+
+        </form>
         
-        <br>
+    </fieldset>
+    
+    <br>
 
-        <footer> 
+     <footer> 
             1 Galaxy Way Sunset, Nevada 0001, Phone: 1-800-Sun-Power, Email: <a href="mailto:solarPV@gmail.com">solarPV@gmail.com</a> <br> <br>
             
             <a href="{% url 'Map' %}">Site Map</a> | <a href="{% url 'solarPV' %}">Terms and Conditions</a> | <a href="{% url 'solarPV' %}">Privacy Policy</a> | <a href="{% url 'solarPV' %}">About Us</a>
             
         </footer>
 
-    </body>
+</body>
 
 </html> 

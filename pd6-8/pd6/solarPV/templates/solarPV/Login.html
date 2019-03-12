@@ -1,14 +1,13 @@
 {% load static %}
-
 <!DOCTYPE html>
 
 <html lang="en">
 
     <head>
         <meta charset="UTF-8">
-        <title>solarPV Homepage</title>
+        <title>solarPV Login Page</title>
         <link href="{% static 'solarPV/Style.css' %}" type="text/css" rel="stylesheet"/>
-        <link rel="stylesheet" media="only screen and (min-width: 961px)" href="{% static 'solarPV/Style.css' %}" />
+        <link rel="stylesheet" href="{% static 'solarPV/Style.css' %}" />
         <meta name="viewport" content="initial-scale=1">
     </head>
 
@@ -31,8 +30,8 @@
                     <i class="product-irrelevant"></i>
                 </button>
                 <div class="product-dropdown-content">
-                    <a href="{% url 'solarPV' %}">Testing and Certification</a>
-                    <a href="{% url 'solarPV' %}">PV Rating</a>
+                    <a href="Home.html">Testing and Certification</a>
+                    <a href="Home.html">PV Rating</a>
                 </div>
             </div> 
             
@@ -58,7 +57,7 @@
                 </div>
             </div> 
             
-            <a href="">Cybersecurity</a>
+            <a href="{% url 'solarPV' %}">Cybersecurity</a>
             
             <div class="news-dropdown">
                 <button class="news-drop-btn">News and Events
@@ -71,9 +70,9 @@
                 </div>
             </div>
             
-            <a href="{% url 'RegistrationForm' %}"> Register </a>
-			
-			<a href="{% url 'Login' %}">Log In</a>
+            <a href="{% url 'RegistrationForm' %}">Register</a>
+            
+            <a href="{% url 'Login' %}">Log In</a>
             
         </div>
         
@@ -86,22 +85,31 @@
             
             <div id="banner">
                 <fieldset style= "width: 400px; height: auto; text-align: center;" id="newsbanner">
-                    <h2 id="news">News and Events</h2>
-                    <i><p>PhotoVoltaic Technical Conference to take place in Marseille, France from 26 to 28 April 2017</p>
-                    <p>Trump is next US president</p>
-                    <p>Syrian forces recapture Aleppo</p>
-                    <p>Senate votes on SCOTUS nominee</p>
-                    </i>
+                    <h2 id="news">User Registration Forms</h2>
+                    <a href="{% url 'Client' %}">Client Registration Form</a>
+                    
+                    <br>
+                    <br>
+                    
+                    <a href="{% url 'Location' %}">Location Registration Form</a>
+                    
+                    <br>
+                    <br>
+                    
+                    <a href="{% url 'Product' %}">Product Registration Form</a>
+            
+                    <br>
+                    <br>
+                    
+                    <a href="{% url 'TestStandard' %}">Test Standard Registration Form</a>
+                    
+                    <br>
+                    <br>
+                    
+                    <a href="{% url 'Certificate' %}">Certificate Registration Form</a>
                 </fieldset>
             </div>
-            
-            
-            <br>
-
-                <div id="homepics">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/B5kFgJLBpec"></iframe>
-                </div>
-            
+       
             <br>
             <br>
             

@@ -1,0 +1,164 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Certificate Registration Form</title>
+    <link href="{% static 'solarPV/Style.css' %}" type="text/css" rel="stylesheet"/>
+    <link rel="stylesheet" media="only screen and (min-width: 961px)" href="{% static 'solarPV/Style.css' %}" />
+    <meta name="viewport" content="initial-scale=1">
+    <script src="PD1Java.js"></script>
+</head>
+
+<body>
+
+        <div class="header">
+            <img alt="logo" src="{% static 'solarPV/logo_transparent.png'%}" height="150" width="150">
+            <h1><i>solarPV</i></h1>
+        </div> 
+
+        <br>
+        <div class="main_nav">
+            
+            <a href="{% url 'solarPV' %}">Home</a>
+            
+            <a href="{% url 'solarPV' %}">Racks and Trackers</a>
+            
+            <div class="product-dropdown">
+                <button class="product-drop-btn">PV Module
+                    <i class="product-irrelevant"></i>
+                </button>
+                <div class="product-dropdown-content">
+                    <a href="{% url 'solarPV' %}">Testing and Certification</a>
+                    <a href="{% url 'solarPV' %}">PV Rating</a>
+                </div>
+            </div> 
+            
+            <div class="product-dropdown">
+                <button class="product-drop-btn">PV Systems
+                    <i class="product-irrelevant"></i>
+                </button>
+                <div class="product-dropdown-content">
+                    <a href="{% url 'solarPV' %}">Monitoring and Inspection</a>
+                    <a href="{% url 'solarPV' %}">Performance Analysis</a>
+                    <a href="{% url 'solarPV' %}">Compare System</a>
+                    <a href="{% url 'solarPV' %}">Energy Prediction</a>
+                </div>
+            </div> 
+            
+            <div class="product-dropdown">
+                <button class="product-drop-btn">Data Analysis
+                    <i class="product-irrelevant"></i>
+                </button>
+                <div class="product-dropdown-content">
+                    <a href="{% url 'solarPV' %}">Module Lifetime Prevention</a>
+                    <a href="{% url 'solarPV' %}">Emergy Prediction</a>
+                </div>
+            </div> 
+            
+            <a href="">Cybersecurity</a>
+            
+            <div class="news-dropdown">
+                <button class="news-drop-btn">News and Events
+                    <i class="news-irrelevant"></i>
+                </button>
+                <div class="news-dropdown-content">
+                    <a href="{% url 'solarPV' %}">Recent News</a>
+                    <a href="{% url 'solarPV' %}">Events</a>
+                    <a href="{% url 'solarPV' %}">About Us</a>
+                </div>
+            </div>
+            
+            <a href="{% url 'RegistrationForm' %}"> Register </a>
+			
+			<a href="{% url 'Login' %}">Log In</a>
+            
+        </div>
+    
+    <br>
+    
+    <fieldset id="formfield">
+        
+        <h2>Certificate Registration Form</h2>
+        
+        <br>
+
+        <form autocomplete="off" id="certificateform" onsubmit="return verifyAll();" method="">
+            
+            <div class='certificateid'>
+                <label for='certificateid'>Certificate ID: </label>
+                <input type='text' name='certificateid' id='certificateid' size='30' maxlength='8' onblur='checkCertificateID(this.id)' required/> 
+            </div>
+            <br>
+            
+             <div class='certnum'>
+                <label for='certnum'>Certificate Number: </label>
+                <input type='text' name='ccertnum' id='certnum' size='30' maxlength='8' onblur='checkCertNum(this.id)' required/> 
+            </div>
+            <br>
+            
+             <div class='clientid'>
+                <label for='clientid'>Client ID: </label>
+                <input type='text' name='clientid' id='clientid' size='30' maxlength='8' onblur='checkClientID(this.id)' required/> 
+            </div>
+            <br>
+            
+             <div class='locationid'>
+                <label for='locationid'>Location ID: </label>
+                <input type='text' name='locationid' id='locationid' size='30' maxlength='8' onblur='checkLocationID(this.id)' required/> 
+            </div>
+            <br>
+
+            <div class='reportnum'>
+                <label for='reportnum'>Report Number: </label>
+                <input type='text' name='reportnum' id='reportnum' size='30' maxlength='30' onblur='checkReportNum(this.id)'/> 
+            </div>
+            <br>
+            
+             <div class='contactname'>
+                <label for='contactname'>Contact Name: </label>
+                <input type='text' name='contactname' id='contactname' size='30' maxlength='8' onblur='checkContactName(this.id)' required/> 
+            </div>
+            <br>
+            
+            <div class='testname'>
+                <label for='testname'>Test Standard: </label>
+                <input type='text' name='testname' id='testname' size='30' maxlength='8' onblur='checkTestName(this.id)' required/> 
+            </div>
+            <br>
+            
+            <div class='productname'>
+                <label for='productname'>Product: </label>
+                <input type='text' name='productname' id='productname' size='30' maxlength='30' onblur='checkProductName(this.id)'/> 
+            </div>
+            <br>
+            
+             <div class='issuedate'>
+                <label for='issuedate'>Cert. Issue Date: </label>
+                <input type='text' name='issuedate' id='issuedate' size='30' maxlength='30' onblur='checkIssueDate(this.id)'/> 
+            </div>
+            <br>
+            
+            <div id='submit' > 
+                <input type='submit' value='Submit' onclick="return confirmation()"> 
+            </div>  
+
+            <br>
+
+        </form>
+        
+    </fieldset>
+    
+    <br>
+
+     <footer> 
+            1 Galaxy Way Sunset, Nevada 0001, Phone: 1-800-Sun-Power, Email: <a href="mailto:solarPV@gmail.com">solarPV@gmail.com</a> <br> <br>
+            
+		<a href="{% url 'Map' %}">Site Map</a> | <a href="{% url 'solarPV' %}">Terms and Conditions</a> | <a href="{% url 'solarPV' %}">Privacy Policy</a> | <a href="{% url 'solarPV' %}">About Us</a>            
+        </footer>
+
+</body>
+
+</html> 
