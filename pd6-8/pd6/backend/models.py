@@ -22,7 +22,7 @@ class User(models.Model):
     prefix = models.CharField(max_length=10)
 
     def __str__(self):
-        return self.name
+        return self.userID
 
 class Location(models.Model):
     locationID = models.IntegerField()
@@ -37,7 +37,7 @@ class Location(models.Model):
     faxNumber =  models.CharField(max_length=25)
 
     def __str__(self):
-        return self.name
+        return self.locationID
 
 class TestStandard(models.Model):
     testStandardID = models.IntegerField()
@@ -46,7 +46,8 @@ class TestStandard(models.Model):
     publishedDate = models.DateField()
 
     def __str__(self):
-        return self.name
+        return self.testStandardID
+
 class Service(models.Model):
     serviceID = models.CharField(max_length=25)
     serviceName = models.CharField(max_length=25)
@@ -56,7 +57,7 @@ class Service(models.Model):
     testStandardID = models.ForeignKey(TestStandard, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.name
+        return self.serviceID
 
 class Product(models.Model):
     modelNum = models.IntegerField()
@@ -89,7 +90,7 @@ class TestSequence(models.Model):
     SequenceName =  models.CharField(max_length=25)
 
     def __str__(self):
-        return self.name
+        return self.SequenceID
 
 class PerformanceData(models.Model):
     modelNum = models.ForeignKey(Product, on_delete=models.CASCADE)
@@ -103,7 +104,7 @@ class PerformanceData(models.Model):
     ff = models.IntegerField()
 
     def __str__(self):
-        return self.name
+        return self.modelNum
 
 class Certificate(models.Model):
     cert_ID = models.IntegerField()
@@ -116,4 +117,4 @@ class Certificate(models.Model):
     certIssueDate = models.DateField()
 
     def __str__(self):
-        return self.name
+        return self.cert_ID
