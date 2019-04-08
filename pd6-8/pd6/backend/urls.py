@@ -27,5 +27,7 @@ Srouter = router.DefaultRouter()
 Srouter.register('Service', views.ServiceView)
 
 urlpatterns = [
-    path('', include(router.urls))
+    path('', include(Prouter.urls))
+	path('', include(Crouter.urls))
+	path('', include(Srouter.urls))
 ]
