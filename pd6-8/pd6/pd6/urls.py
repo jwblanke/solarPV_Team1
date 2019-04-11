@@ -19,5 +19,5 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('solarPV.urls')),
-    path('registrationForm/', include('solarPV.urls'))
+    path('', include('backend.urls')),
 ]
