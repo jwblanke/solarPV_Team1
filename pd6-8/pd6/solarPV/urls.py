@@ -1,5 +1,6 @@
-from django.urls import path
-
+from django.urls import path, re_path
+from django.contrib import admin
+from django.contrib.auth import views as auth_views
 from. import views
 
 urlpatterns = [
@@ -11,5 +12,6 @@ urlpatterns = [
     path('Map/', views.Map, name='Map'),
     path('Product/', views.Product, name='Product'),
     path('TestStandard/', views.TestStandard, name='TestStandard'),
-    path('Login/', views.Login, name='Login')
+    re_path('Login/', auth_views.LoginView.as_view(), name='Login')
+
 ]

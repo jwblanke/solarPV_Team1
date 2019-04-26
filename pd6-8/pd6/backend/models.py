@@ -37,7 +37,7 @@ class Location(models.Model):
     faxNumber =  models.CharField(max_length=25)
 
     def __str__(self):
-        return self.locationID
+        return str(self.locationID)
 
 class TestStandard(models.Model):
     testStandardID = models.IntegerField()
@@ -46,7 +46,7 @@ class TestStandard(models.Model):
     publishedDate = models.DateField()
 
     def __str__(self):
-        return self.testStandardID
+        return str(self.testStandardID)
 
 class Service(models.Model):
     serviceID = models.CharField(max_length=25)
