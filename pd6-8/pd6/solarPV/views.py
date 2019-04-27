@@ -3,6 +3,9 @@ from django.http import request, JsonResponse
 import urllib.request
 from django.http import HttpResponse
 import json
+from django.contrib.auth import login, authenticate
+from django.contrib.auth.forms import UserCreationForm
+from django.shortcuts import render, redirect
 
 def solarPV(request):
     return render(request, 'solarPV/solarPV.html')
@@ -46,5 +49,19 @@ def certificate_search(request):
 	certificate = dic['certificate']
 
 	return render(request, 'solarPV/TestingCertification.html', {'certificate': certificate})
+
+def signup(request):
+	if request.method == 'POST':
+		form = UserCreationForm(request.POST)
+		if form.is_valid():
+			form.save()
+			username = form.cleaned_data.get('username')
+			raw_password = form.cleaned_data.get('password1')
+			user = authenticate(username=username, password=raw_password)
+			login(request, user)
+			return redirect('/solarPV')
+	else:
+		form = UserCreationForm()
+	return render(request, 'solarPV/signup.html', {'form': form})
 
 	

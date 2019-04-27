@@ -14,6 +14,7 @@ urlpatterns = [
     path('Product/', views.Product, name='Product'),
     path('TestStandard/', views.TestStandard, name='TestStandard'),
     path('TestingCertification/', views.TestingCertification, name='TestingCertification'),
-    re_path('Login/', auth_views.LoginView.as_view(), name='Login')
+    re_path('Login/', auth_views.LoginView.as_view(), name='Login'),
+    path('signup/', views.signup, name='signup')
 
 ]
