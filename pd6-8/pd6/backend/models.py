@@ -117,4 +117,4 @@ class Certificate(models.Model):
     certIssueDate = models.DateField()
 
     def __str__(self):
-        return self.cert_ID
+        return str(self.cert_ID)
