@@ -1,12 +1,11 @@
 {% load static %}
-
 <!DOCTYPE html>
 
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <title>Product Registration Form</title>
+    <title>Certificate Registration Form</title>
     <link href="{% static 'solarPV/Style.css' %}" type="text/css" rel="stylesheet"/>
     <link rel="stylesheet" media="only screen and (min-width: 961px)" href="{% static 'solarPV/Style.css' %}" />
     <meta name="viewport" content="initial-scale=1">
@@ -80,56 +79,26 @@
     
     <br>
     
-    <fieldset id="formfield">
+    <fieldset id="formfield">   
+        <h2>Certificate Search</h2>
         
-        <h2>Product Registration Form</h2>
+        <br>
 
-        <form autocomplete="off" id="productform" onsubmit="return verifyAll();" method="">
+        <form autocomplete="off" id="certificate_search_form" action="/search/certificates" method="get">
             
-            <div class='productid'>
-                <label for='productid'>Product ID: </label>
-                <input type='text' name='productid' id='productid' size='30' maxlength='8' onblur='checkProductID(this.id)' required/> 
+            <div class='certificate_search'>
+                <label for='certificate_search'>Search by Product Name or Certificate Number: </label>
+                <br>
+                <input type='text' name='certificate_search_input' id='certificate_search_input' size='30'/> 
             </div>
-            <br>
-            
-            <div class='modelnum'>
-                <label for='modelnum'>Model Number: </label>
-                <input type='text' name='modelnum' id='modelnum' size='30' maxlength='8' onblur='checkModelNum(this.id)' required/> 
-            </div>
-            <br>
+            <input type="submit">
+        </form> 
+    </fieldset>
 
-            <div class='productname'>
-                <label for='productname'>Product Name: </label>
-                <input type='text' name='productname' id='productname' size='30' maxlength='30' onblur='checkProductName(this.id)'/> 
-            </div>
-            <br>
-            
-            <div class='producttype'>
-                <label for='producttype'>Product Type: </label>
-                <input type='text' name='producttype' id='producttype' size='30' maxlength='30' onblur='checkProductType(this.id)'/> 
-            </div>
-            <br>
-            
-            <div class='fireclass'>
-                <label for='fireclass'>Product Fire Class: </label>
-                <input type='text' name='fireclass' id='fireclass' size='30' maxlength='30' onblur='checkFireClass(this.id)'/> 
-            </div>
-            <br>
-            
-             <div class='maxvolt'>
-                <label for='maxvolt'>Maximum System Voltage: </label>
-                <input type='text' name='maxvolt' id='maxvolt' size='30' maxlength='30' onblur='checkMaxVolt(this.id)'/> 
-            </div>
-            <br>
-            
-            <div id='submit' > 
-                <input type='submit' value='Submit' onclick="return confirmation()"> 
-            </div>  
-
-            <br>
-
-        </form>
-        
+    <fieldset id="formfield"> 
+        {% for key, value in certificate.items %}
+            <li>{{ key }}: {{ value }}</li>
+        {% endfor %}
     </fieldset>
     
     <br>
@@ -138,7 +107,6 @@
             1 Galaxy Way Sunset, Nevada 0001, Phone: 1-800-Sun-Power, Email: <a href="mailto:solarPV@gmail.com">solarPV@gmail.com</a> <br> <br>
             
 		<a href="{% url 'Map' %}">Site Map</a> | <a href="{% url 'solarPV' %}">Terms and Conditions</a> | <a href="{% url 'solarPV' %}">Privacy Policy</a> | <a href="{% url 'solarPV' %}">About Us</a>            
-            
         </footer>
 
 </body>
